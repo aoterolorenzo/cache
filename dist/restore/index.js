@@ -3242,7 +3242,7 @@ function getCacheEntry(keys, paths, options) {
             return null;
         }
         if (!requestUtils_1.isSuccessStatusCode(response.statusCode)) {
-            throw new Error(`Cache service responded with ${response.statusCode}`);
+            throw new Error(`Cache1 service responded with ${response.statusCode}`);
         }
         const cacheResult = response.result;
         const cacheDownloadUrl = cacheResult === null || cacheResult === void 0 ? void 0 : cacheResult.archiveLocation;
@@ -3310,7 +3310,7 @@ function uploadChunk(httpClient, resourceUrl, openStream, start, end) {
             return httpClient.sendStream('PATCH', resourceUrl, openStream(), additionalHeaders);
         }));
         if (!requestUtils_1.isSuccessStatusCode(uploadChunkResponse.message.statusCode)) {
-            throw new Error(`Cache service responded with ${uploadChunkResponse.message.statusCode} during upload chunk.`);
+            throw new Error(`Cache2 service responded with ${uploadChunkResponse.message.statusCode} during upload chunk.`);
         }
     });
 }
@@ -3371,7 +3371,7 @@ function saveCache(cacheId, archivePath, options) {
         core.info(`Cache Size: ~${Math.round(cacheSize / (1024 * 1024))} MB (${cacheSize} B)`);
         const commitCacheResponse = yield commitCache(httpClient, cacheId, cacheSize);
         if (!requestUtils_1.isSuccessStatusCode(commitCacheResponse.statusCode)) {
-            throw new Error(`Cache service responded with ${commitCacheResponse.statusCode} during commit cache.`);
+            throw new Error(`Cache3 service responded with ${commitCacheResponse.statusCode} during commit cache.`);
         }
         core.info('Cache saved successfully');
     });
@@ -50956,7 +50956,7 @@ function retry(name, method, getStatusCode, maxAttempts = constants_1.DefaultRet
             }
             if (statusCode) {
                 isRetryable = isRetryableStatusCode(statusCode);
-                errorMessage = `Cache service responded with ${statusCode}`;
+                errorMessage = `Cache4 service responded with ${statusCode}`;
             }
             core.debug(`${name} - Attempt ${attempt} of ${maxAttempts} failed with error: ${errorMessage}`);
             if (!isRetryable) {

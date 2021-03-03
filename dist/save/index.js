@@ -3310,7 +3310,7 @@ function uploadChunk(httpClient, resourceUrl, openStream, start, end) {
             return httpClient.sendStream('PATCH', resourceUrl, openStream(), additionalHeaders);
         }));
         if (!requestUtils_1.isSuccessStatusCode(uploadChunkResponse.message.statusCode)) {
-            throw new Error(`Cache service responded with ${uploadChunkResponse.message.statusCode} during upload chunk.`);
+            throw new Error(`Cache5 service responded with ${uploadChunkResponse.message.statusCode} during upload chunk.`);
         }
     });
 }
@@ -3371,7 +3371,7 @@ function saveCache(cacheId, archivePath, options) {
         core.info(`Cache Size: ~${Math.round(cacheSize / (1024 * 1024))} MB (${cacheSize} B)`);
         const commitCacheResponse = yield commitCache(httpClient, cacheId, cacheSize);
         if (!requestUtils_1.isSuccessStatusCode(commitCacheResponse.statusCode)) {
-            throw new Error(`Cache service responded with ${commitCacheResponse.statusCode} during commit cache.`);
+            throw new Error(`Cache6 service responded with ${commitCacheResponse.statusCode} during commit cache.`);
         }
         core.info('Cache saved successfully');
     });
