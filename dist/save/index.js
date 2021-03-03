@@ -45614,6 +45614,10 @@ function restoreCache(paths, primaryKey, restoreKeys, options) {
         }
         const compressionMethod = yield utils.getCompressionMethod();
         // path are needed to compute version
+        core.debug("1!");
+        core.debug(keys);
+        core.debug(paths);
+        core.debug(compressionMethod);
         const cacheEntry = yield cacheHttpClient.getCacheEntry(keys, paths, {
             compressionMethod
         });
