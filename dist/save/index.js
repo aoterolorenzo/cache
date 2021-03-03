@@ -3242,7 +3242,7 @@ function getCacheEntry(keys, paths, options) {
             return null;
         }
         if (!requestUtils_1.isSuccessStatusCode(response.statusCode)) {
-            throw new Error(`Cache service responded with ${response.statusCode}`);
+            throw new Error(`Cacher service responded with ${response.statusCode}`);
         }
         const cacheResult = response.result;
         const cacheDownloadUrl = cacheResult === null || cacheResult === void 0 ? void 0 : cacheResult.archiveLocation;
@@ -50955,7 +50955,7 @@ function retry(name, method, getStatusCode, maxAttempts = constants_1.DefaultRet
             }
             if (statusCode) {
                 isRetryable = isRetryableStatusCode(statusCode);
-                errorMessage = `Cache service responded with ${statusCode}`;
+                errorMessage = `Caches service responded with ${statusCode}`;
             }
             core.debug(`${name} - Attempt ${attempt} of ${maxAttempts} failed with error: ${errorMessage}`);
             if (!isRetryable) {
