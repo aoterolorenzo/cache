@@ -51,11 +51,11 @@ async function run(): Promise<void> {
             } else if (error.name === cache.ReserveCacheError.name) {
                 core.info(error.message);
             } else {
-                utils.logWarning(error.message);
+                utils.logWarning("1" + error.message);
             }
         }
     } catch (error) {
-        utils.logWarning(error.message);
+        utils.logWarning("2" + error.message);
     }
 }
 

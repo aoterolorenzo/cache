@@ -45527,6 +45527,9 @@ function restoreCache(paths, primaryKey, restoreKeys, options) {
         core.debug("2!");
         core.debug(keys);
         core.debug(paths);
+        core.debug(primaryKey);
+        core.debug(restoreKeys);
+        core.debug(options);
         core.debug(compressionMethod);
         const cacheEntry = yield cacheHttpClient.getCacheEntry(keys, paths, {
             compressionMethod
